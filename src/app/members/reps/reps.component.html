@@ -1,0 +1,48 @@
+<h1 class="container">The House</h1>
+<div class="row">
+  <div id="memberTable" class="navbar-default col-md-4 col-lg-4 col-sm-4">
+    <mat-table id="table2" #table [dataSource]="dataSource" matSort>
+
+      <ng-container  matColumnDef="last_name">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+        <mat-cell *matCellDef="let rep" [class.selected]="rep === selectedRep" (click) = "onSelect(rep)">
+          {{rep.first_name}}
+          {{rep.last_name}}
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="party">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Party </mat-header-cell>
+        <mat-cell *matCellDef="let rep" (click) = "onSelect(member)">
+          <span ng-style="{'color': rep.party == 'R' ? 'red' : 'blue'}">({{rep.party}})</span></mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="votes_with_party_pct">
+        <mat-header-cell *matHeaderCellDef mat-sort-header > Loyalty </mat-header-cell>
+        <mat-cell *matCellDef="let rep" [class.selected]="rep === selectedRep" (click) = "onSelect(rep)"> {{rep.votes_with_party_pct}}% </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="state">
+        <mat-header-cell *matHeaderCellDef mat-sort-header > State </mat-header-cell>
+        <mat-cell *matCellDef="let member" [class.selected]="member === selectedMember" (click) = "onSelect(member)"> {{member.state}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="favorite">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Favorite </mat-header-cell>
+        <mat-cell *matCellDef="let rep" [class.selected]="member === selectedRep" (click) = "onSelect(rep)">
+          <button id="favoriteButton" (click) = "onFavorite()">
+            <mat-icon class="favIcon">favorite</mat-icon>
+          </button> </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+
+      <mat-row  *matRowDef="let row; columns: displayedColumns;"
+                [ngClass]="{'highlight': selectedRowIndex == row.id}"
+                (click)="highlight(row)"></mat-row>
+
+    </mat-table>
+  </div>
+  <app-member-detail class="col-md-6 col-lg-6 col-sm-4" [member] = "selectedRep"></app-member-detail>
+</div>
+

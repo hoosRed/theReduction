@@ -1,0 +1,83 @@
+@import '../../../../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+
+host:{
+'style': 'display: block;',
+}
+.mat-table{
+  width: 100%;
+}
+
+/*TABLE COLUMN FORMATTING*/
+.mat-column-last_name{
+  flex: 0 0 150px;
+}
+.mat-column-party{
+  flex: 0 0 10%;
+}
+.mat-column-votes_with_party_pct{
+  flex: 0 0 15%;
+}
+.mat-column-state{
+  flex: 0 0 10%;
+}
+.mat-column-favorite{
+  flex: 0 0 110px;
+}
+
+.favIcon{
+  color: red;
+  background-color: transparent;
+}
+.favIconNot{
+  color: grey;
+  background-color: transparent;
+}
+#favoriteButton{
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline-width: 0px;
+}
+.highlight{
+  background: yellow;
+}
+
+h1  {
+  padding-top: 90px;
+  grid-template-columns: 50px;
+}
+
+body {
+  font-family: Roboto, Arial, sans-serif;
+  margin: 10px;
+  height: 500px;
+  overflow-scrolling: auto;
+  background-color: lightsteelblue;
+}
+
+.basic-container {
+  padding: 5px;
+}
+
+.version-info {
+  font-size: 8pt;
+  float: right;
+}
+
+#memberTable{
+  margin-top: 20px;
+  margin-left: 150px;
+  height: 500px;
+  box-shadow: 0 5px 5px -3px rgba(0,0,0,.2), 0 8px 10px 1px rgba(0,0,0,.14), 0 3px 14px 2px rgba(0,0,0,.12);
+  overflow-y: scroll;
+}
+.dem{
+  color: #4082ed;
+}
+.rep{
+  color: #d83838;
+}
+

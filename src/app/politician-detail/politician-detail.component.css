@@ -1,0 +1,15 @@
+
+p{
+  font-family: "American Typewriter";
+}
+
+#detailComp{
+  display: block;
+  background-color: #fcd1d1;
+  margin-bottom: 20px;
+  border: red;
+
+}
+img{
+  width: 100px;
+}

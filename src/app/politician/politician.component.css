@@ -1,0 +1,11 @@
+:host {
+  display: block;
+  border: 2px solid darkred;
+  background-color: #fcd1d1;
+  overflow: scroll;
+  height: 700px;
+}
+
+p{
+  font-family: Courier;
+}

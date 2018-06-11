@@ -1,0 +1,41 @@
+<div class="row">
+  <div id="signupBackground" class="col-md-12 col-lg-12 h-100">
+      <div id="signup" class="well container-fluid center_div col-lg-4 col-lg-4 col-md-4 col-md-offset-4">
+        <h1>Sign Up</h1>
+        <form [formGroup]="myForm" (ngSubmit) = "onSubmit()">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email"
+                   id="email"
+                   class="form-control"
+                   formControlName="email">
+          </div>
+          <div class="form-group">
+            <label for="userName">UserName</label>
+            <input type="text"
+                   id="userName"
+                   class="form-control"
+                   formControlName="userName">
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password"
+                   id="password"
+                   class="form-control"
+                   formControlName="password">
+          </div>
+          <div class="form-group">
+            <label for="password">Referral</label>
+          </div>
+          <input type="text"
+                 id="referral"
+                 class="form-control"
+                 formControlName="referral">
+
+          <button id="signupButton" class="btn btn-primary"
+                  type="submit"
+                  >Submit</button>
+        </form>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<nav id="header" class = "navbar-fixed-top navbar-inverse bg-info">
+  <div class = "container">
+    <div class = "navbar-header">
+      <span style="color: #ffffff;" class="navbar-brand navbar-static-top visible-lg-inline-block visible-md-inline-block "><a id="headerBrand" class="reductionHeader" routerLink="/home">The Reduction</a></span>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class= "nav navbar-nav reductionHeader nav-tabs" style="border-bottom:0px">
+        <li class="nav-i"><a style="color: #ffffff;" routerLinkActive="active" routerLink="/politician">The Senate</a></li>
+        <li><a style="color: #ffffff;" routerLinkActive="active" routerLink="/theHouse">The House</a></li>
+        <li><a style="color: #ffffff;" routerLinkActive="active" routerLink="/narrative">The Story</a></li>
+        <li><a style="color: #ffffff;" routerLinkActive="active" routerLink="/theOdds">The Odds</a></li>
+
+
+      </ul>
+      <ul class= "nav navbar-nav navbar-right nav-tabs reductionHeader" style="border-bottom:0px">
+        <li *ngIf="!user"><a style="color: #ffffff;" routerLinkActive="active" routerLink="/signup">SignUp</a></li>
+        <li *ngIf="!user"><a style="color: #ffffff;" routerLinkActive="active" routerLink="/auth">Login</a></li>
+        <li *ngIf="user"><a style="color: #ffffff;" routerLinkActive="active" routerLink="/logout"> Welcome {{ user.userName }}</a></li>
+
+      </ul>
+    </div>
+  </div>
+
+</nav>
+
+<link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">

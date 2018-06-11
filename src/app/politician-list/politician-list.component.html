@@ -1,0 +1,14 @@
+<div class="dropdown show">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Choose Politician
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <div *ngFor="let politician of politicians">
+      <a class = "dropdown-item" [class.selected]="politician === selectedPolitician"
+         (click) = "onSelect(politician)">{{politician.name}}</a>
+
+    </div>
+
+  </div>
+</div>

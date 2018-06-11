@@ -1,0 +1,63 @@
+body{
+  background: #659999;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #6C2A1E, #659999);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #6C2A1E, #659999); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+#aboutHeader{
+  width: 100%;
+  height: 500px;
+  background-image: url("https://images.unsplash.com/photo-1500486884074-db879aa1ccbc?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8f7c31c91c44ba49d60332bff9b7f2b6&auto=format&fit=crop&w=1050&q=80");
+  background-size: cover;
+}
+#aboutSection1{
+  width: 100%;
+  height: 1050px;
+  padding-top: 400px;
+  font-size: 1.5em;
+}
+#aboutSection2{
+  width: 100%;
+  height: 1050px;
+  padding-top: 400px;
+  font-size: 1.5em;
+}
+#aboutSection3{
+  width: 100%;
+  height: 1050px;
+  padding-top: 300px;
+  font-size: 1.5em;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  height: 50%;
+}
+
+img {
+  display: table-cell;
+  vertical-align: middle;
+  height: 350px;
+  position: relative;
+}
+.vcenter {
+  display: inline-block;
+  vertical-align: middle;
+  float: none;
+}
+.align-items-center {
+  -ms-flex-align: center!important;
+  align-items: center!important;
+}
+.order1 {
+  order: 1;
+}
+.order2 {
+  order: 2;
+}
+p{
+  font-size: 1.1em;
+}

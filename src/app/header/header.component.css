@@ -1,0 +1,14 @@
+/*#header{*/
+  /*margin-bottom: 10px;*/
+  /*font-family: 'Audiowide', cursive;*/
+  /*background-color: darkgrey;*/
+/*}*/
+.reductionHeader{
+  color: white;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.3em;
+  text-decoration: none;
+}
+#headerBrand{
+  font-size: 1.75em;
+}

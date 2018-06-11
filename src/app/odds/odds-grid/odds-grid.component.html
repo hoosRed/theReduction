@@ -1,0 +1,31 @@
+<!--<div id="oddsGrid" class="well-lg" *ngIf="odds">-->
+  <!--<h2>{{odds.ShortName}}</h2>-->
+  <!--<mat-grid-list cols="4" rows = "1" rowHeight="60px">-->
+
+    <!--<mat-grid-tile *ngFor = "let odd of odds.Contracts" [rowspan]="1" [colspan]="1" [style.background]="'grey'">-->
+      <!--{{odds.ShortName}}:-->
+      <!--<span style="color: red">{{((odd.BestSellYesCost*100).toFixed(1))}}%</span>-->
+    <!--</mat-grid-tile>-->
+  <!--</mat-grid-list>-->
+<!--</div>-->
+
+
+<div class="row" *ngIf="odds">
+  <div class="container">
+    <div class="col-md-6 col-lg-6 col-md-offset-3 col-lg-offset3">
+      <h2>{{odds.ShortName}}</h2>
+        <div>
+          <ul *ngFor="let i of odds.Contracts">
+            <li>{{i.ShortName}}</li>
+            <li>{{i.BestSellYesCost}}</li>
+          </ul>
+        </div>
+
+      <!--<h2>{{contracts[0]?.Name}}{{((contracts[0]?.BestBuyYesCost*100).toFixed(1)) }}%</h2>-->
+      <!--<h2>{{contracts[1]?.Name}}{{((contracts[1]?.BestBuyYesCost*100).toFixed(1)) }}%</h2>-->
+      <!--<h2>{{contracts[2]?.Name}}{{((contracts[2]?.BestBuyYesCost*100).toFixed(1)) }}%</h2>-->
+      <!--<h2>{{contracts[3]?.Name}}{{((contracts[3]?.BestBuyYesCost*100).toFixed(1)) }}%</h2>-->
+      <!--<p *ngFor="let con of contracts" >{{contracts[con].ShortName}}:::{{((contracts[con].BestBuyYesCost*100).toFixed(1)) }}%</p>-->
+    </div>
+  </div>
+</div>

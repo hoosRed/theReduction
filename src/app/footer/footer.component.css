@@ -1,0 +1,18 @@
+#reductionFooter {
+  height: 50px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.5em;
+  color: white;
+}
+#currentDate{
+  text-align: right;
+  color: white;
+  padding-bottom: 20%;
+  float: right;
+}
+#footerTabs{
+  padding-top: 10px;
+}
+a{
+  text-decoration: none;
+}

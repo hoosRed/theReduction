@@ -1,0 +1,22 @@
+
+#detailComp{
+  /*margin: 30px;*/
+  /*margin-left: 60%;*/
+  /*padding: 15px;*/
+  border: 4px solid black;
+  margin-left: 70px;
+  margin-top: 18px;
+  padding-bottom: 50px;
+  box-shadow: 5px 5px grey;
+}
+
+
+
+#profPic{
+  max-width: 250px;
+  max-height: 250px;
+}
+h6{
+  border: black;
+  border-width: 5px;
+}

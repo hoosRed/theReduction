@@ -19,9 +19,13 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "styles.css"
+        "styles.css",
+        "/Users/tylerredshaw/Documents/webDev2/template/meanClone/mean4plus/node_modules/bootstrap/dist/css/bootstrap.min.css"
       ],
-      "scripts": [],
+      "scripts": [
+        "/Users/tylerredshaw/Documents/webDev2/template/meanClone/mean4plus/node_modules/jquery/dist/jquery.min.js",
+        "/Users/tylerredshaw/Documents/webDev2/template/meanClone/mean4plus/node_modules/bootstrap/dist/js/bootstrap.min.js"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",

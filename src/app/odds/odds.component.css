@@ -1,0 +1,62 @@
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+#theOdds{
+  padding-top: 8%;
+  padding-bottom: 5%;
+  margin: 5%;
+  border: 4px solid black;
+  background-color: whitesmoke;
+  box-shadow: 5px 5px grey;
+  overflow-y: scroll;
+  max-height: 580px;
+
+}
+body{
+
+}
+#oneOdds{
+  border: 4px solid red;
+}
+#questionName{
+  font-weight: bold;
+}
+#probName{
+  font-weight: normal;
+}
+
+#allOdds{
+  padding-top: 51px;
+
+}
+#theOddsMain{
+  padding-top: 5%;
+  background-color: whitesmoke;
+}
+.mat-form-field{
+  width: 500px;
+}
+#featured{
+  background-color: whitesmoke;
+  margin-top: 51px;
+}
+img{
+  width: 100px;
+  margin: 10px;
+}
+th{
+  /*border: 2px solid black;*/
+}
+/*tr{*/
+  /*!*border: solid black 2px;*!*/
+  /*padding: 10px;*/
+  /*margin: 10px;*/
+/*}*/
+
+table{
+  padding: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 2px solid black
+}
+i{
+  font-size: 1.75em;
+}

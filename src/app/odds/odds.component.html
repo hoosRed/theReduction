@@ -1,0 +1,116 @@
+<body>
+  <div class="row">
+    <div class="container">
+      <div id="featured">
+        <div class="col-lg-12 col-md-12">
+          <h1>The Odds</h1>
+          <!--FEATURED TABLE-->
+          <table *ngIf="featArray" class="table">
+
+            <tr>
+              <td>
+                <img src="{{featArray[0].Image}}" alt=""></td>
+              <td>
+                <i><div>{{featArray[0].ShortName}}</div></i>
+                <div *ngFor="let i of featArray[0].Contracts">
+                  {{i.ShortName}}
+                  {{ ((i.BestBuyYesCost*100).toFixed(1)) }}%
+                </div>
+              </td>
+              <td>
+                <img src="{{featArray[1].Image}}" alt=""></td>
+              <td>
+                <i><div>{{featArray[1].ShortName}}</div></i>
+                <div *ngFor="let i of featArray[1].Contracts">
+                  {{i.ShortName}}
+                  {{ ((i.BestBuyYesCost*100).toFixed(1)) }}%
+                </div>
+              </td>
+              </tr>
+
+              <tr>
+              <td>
+                <img src="{{featArray[2].Image}}" alt=""></td>
+              <td>
+                <i><div>{{featArray[2].ShortName}}</div></i>
+                <div *ngFor="let i of featArray[2].Contracts">
+                  {{ ((i.BestBuyYesCost*100).toFixed(1)) }}%
+                </div>
+              </td>
+              <td>
+                <img src="{{featArray[3].Image}}" alt=""></td>
+              <td>
+                <i><div>{{featArray[3].ShortName}}</div></i>
+                <div *ngFor="let i of featArray[3].Contracts">
+                  {{ ((i.BestBuyYesCost*100).toFixed(1)) }}%
+                </div>
+              </td>
+          </table>
+
+          <!--ANGULAR MATERIAL GRID LIST-->
+          <!--<div>-->
+            <!--<mat-grid-list cols="4" rows = "1" rowHeight="60px">-->
+              <!--<mat-grid-tile *ngFor = "let i of featArray" [rowspan]="2" [colspan]="2" [style.background]="'white'">-->
+
+                <!--<img src="{{i.Image}}" alt="">-->
+                <!--<div>{{i.ShortName}}</div>-->
+                <!--&lt;!&ndash;<div  *ngFor="let z of i.Contracts">&ndash;&gt;-->
+                  <!--&lt;!&ndash;{{z.ShortName}}{{ ((z.BestBuyYesCost)*100).toFixed(1) }}%&ndash;&gt;-->
+                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+              <!--</mat-grid-tile>-->
+            <!--</mat-grid-list>-->
+
+          <!--</div>-->
+
+          <!--<div *ngIf="featArray" class="container">-->
+            <!--<div  class="lg-col-12 md-col-12" *ngFor="let odd of featArray" style="font: bold">-->
+              <!--{{ odd.ShortName }}-->
+              <!--<div *ngFor="let odd2 of odd.Contracts">-->
+                <!--{{ odd2.Name }}-->
+                <!--{{((odd2.BestSellYesCost*100).toFixed(1))}}%-->
+              <!--</div>-->
+            <!--</div>-->
+          <!--</div>-->
+
+        </div>
+      </div>
+      <div id="allOdds" class="container col-lg-12 col-md-12 well">
+
+        <div class="container col-lg-12 col-md-12">
+          <h3>All The Odds</h3> <span><button class="btn btn-primary " (click)="oddsPullAll()">Refresh</button></span>
+          <button class="btn btn-info " (click)="oddsPullFeaturedTest()">Test Featured</button>
+          <!--<div id="questionName" class="lg-col-12 md-col-12" *ngFor="let odd of oddsAll">-->
+          <!--{{ odd.Name }}-->
+          <!--<div id="probName" *ngFor="let odd2 of odd.Contracts">-->
+          <!--{{ odd2.Name }}-->
+          <!--{{((odd2.BestSellYesCost*100).toFixed(1))}}%-->
+          <!--</div>-->
+          <!--</div>-->
+        </div>
+      </div>
+      <!--get one Odd-->
+      <div id="theOddsMain" class="container">
+
+        <!--<button class="btn btn-danger" (click)="oddsPull(selected)">GET ONE ODD</button>-->
+
+        <!--dropdown-->
+        <form>
+          <mat-form-field>
+            <!--<mat-select placeholder="Select an Odd" [(value)]="selected" >-->
+            <mat-select placeholder="Select an Odd">
+              <mat-option *ngFor="let item of oddsAll" value="{{ item.TickerSymbol }}" [class.selected]="item === selectedOdd" (click) = "onSelect(item)">{{ item.Name }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </form>
+        <span *ngIf="selected">Ticker Symbol: {{ selected }}</span>
+        <!--app-odds-grid-->
+        <div>
+          <app-odds-grid [odds]="selectedOdd"> load </app-odds-grid>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+</body>
