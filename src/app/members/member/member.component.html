@@ -1,7 +1,7 @@
-<h1 class="container">The Senate</h1>
-<!--////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
 <div class="row">
-  <div id="memberTable" class="navbar-default col-md-4 col-lg-4 col-sm-4">
+  <h1 class="col-md-offset-1 col-lg-offset-1 col-sm-offset-1">Senators</h1>
+  <div id="memberTable" class="navbar-default col-md-4 col-lg-4 col-sm-4 col-md-offset-1 col-lg-offset-1 col-sm-offset-1">
       <mat-table id="table2" #table [dataSource]="dataSource" matSort class="mat-elevation-z8">
 
         <ng-container  matColumnDef="last_name">
@@ -20,7 +20,7 @@
 
         <ng-container matColumnDef="votes_with_party_pct">
           <mat-header-cell *matHeaderCellDef mat-sort-header > Loyalty </mat-header-cell>
-          <mat-cell *matCellDef="let member" [class.selected]="member === selectedMember" (click) = "onSelect(member)"> {{member.votes_with_party_pct}}% </mat-cell>
+          <mat-cell *matCellDef="let member" [class.selected]="member === selectedMember" (click) = "onSelect(member)"> {{ ((member.votes_with_party_pct)).toFixed(1) }}% </mat-cell>
         </ng-container>
 
         <ng-container matColumnDef="state">
@@ -54,12 +54,20 @@
       </mat-table>
     </div>
   <app-member-detail class="col-md-6 col-lg-6 col-sm-4" [member] = "selectedMember"></app-member-detail>
+
+
+  </div>
+
+<!-- Display User Favorites List-->
+<div class="row" id="favoriteListBorder">
+  <div class="container">
+    <div class="col-md-3 col-lg-3" *ngIf="favoriteList">
+      <h4>Favorite Senators: </h4>
+      <div id="favoriteListDisplay">
+        <ul *ngFor="let favorite of favoriteList">
+          <li> {{ favorite }} </li>
+        </ul>
+      </div>
+  </div>
 </div>
-
-
-<div class="container" *ngIf="favoriteList">
-  <h4>Favorite Senators: </h4>
-  <ul *ngFor="let favorite of favoriteList">
-    <li> {{ favorite }} </li>
-  </ul>
 </div>

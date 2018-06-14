@@ -1,6 +1,7 @@
 <h1 class="container">The House</h1>
-<div class="row">
+<div class="row" *ngIf="reps">
   <div id="memberTable" class="navbar-default col-md-4 col-lg-4 col-sm-4">
+    <!--Angular Material Design Component - -->
     <mat-table id="table2" #table [dataSource]="dataSource" matSort>
 
       <ng-container  matColumnDef="last_name">

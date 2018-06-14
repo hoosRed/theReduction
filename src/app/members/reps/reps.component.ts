@@ -4,6 +4,8 @@ import {DataService} from '../../data.service';
 import {SignupService} from '../../signup/signup.service';
 import { Rep } from './rep.model';
 import { DataSharingService} from '../../data-sharing.service';
+import { ResolverService } from '../../resolver.service';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-reps',
@@ -19,18 +21,33 @@ export class RepsComponent implements AfterViewInit, OnInit {
   user: string;
   @ViewChild(MatSort) sort: MatSort;
   selectedRowIndex: number = -1;
-  constructor(private signupService: SignupService, private _dataService: DataService, private dataSharing: DataSharingService) {
-    this._dataService.getReps()
-      .subscribe(res => this.reps = res);
+  constructor(private signupService: SignupService,
+              private _dataService: DataService,
+              private dataSharing: DataSharingService,
+              private resolverService: ResolverService,
+              private route: ActivatedRoute) {
+    // this._dataService.getReps()
+    //   .subscribe(res => this.reps = res);
   }
   ngOnInit() {
-    this._dataService.getReps()
-      .subscribe(res => this.dataSource = res);
-    console.log('ngAfterViewInit');
-    // get the current user signed in
-    this.dataSharing.currentUser.subscribe(user => this.user = user);
+    // CALL FOR THE ROUTE GUARD DATA , stay where you are if false?
+    this.route.data
+      .subscribe((data: { reps: Array<any> }) => {
+      this.reps = data.reps;
+      this.dataSource = new MatTableDataSource(this.reps);
+      console.log(this.reps[0].id);
+    });
+
+
+
+
+    // this._dataService.getReps()
+    //   .subscribe(res => this.dataSource = res);
+    // console.log('ngAfterViewInit');
+    // // get the current user signed in
+    // this.dataSharing.currentUser.subscribe(user => this.user = user);
   }
-  highlight(row){
+  highlight(row) {
     console.log(row);
     this.selectedRowIndex = row.id;
   }

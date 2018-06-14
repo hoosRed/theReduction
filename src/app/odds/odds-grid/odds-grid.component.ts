@@ -12,19 +12,28 @@ import { Contract } from '../contract.model';
 })
 
 export class OddsGridComponent implements OnInit, OnChanges {
-
-  // @Input() selected: String;
+  colnum: number;
   @Input() odds: Odds;
   selectedOddGrid: Odds;
   contracts: Contract[];
   body: object;
-  constructor(private _dataService: DataService) { }
+  // constructor(private _dataService: DataService) { }
   ngOnChanges(changes: SimpleChanges) {
     this.contracts = this.odds.Contracts;
 
+    if (this.odds.Contracts.length % 4 === 0) {
+      this.colnum = 4;
+    } else if (this.odds.Contracts.length % 3 === 0) {
+      this.colnum = 3;
+    } else if (this.odds.Contracts.length > 7) {
+        this.colnum = 5;
+      } else {
+      this.colnum = this.odds.Contracts.length;
+    }
     // this is undefined on the first call, needs to contain the correct information
-    console.log('You are in oddsPullGrid::::::  ' + this.selectedOddGrid.Name);
+    console.log('You are in oddsPullGrid:  ' + this.selectedOddGrid.Name);
   }
   ngOnInit() {
+    this.colnum = this.odds.Contracts.length;
   }
 }

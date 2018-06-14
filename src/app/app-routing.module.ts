@@ -9,6 +9,8 @@ import { LogoutComponent } from './logout/logout.component';
 import { MemberComponent } from './members/member/member.component';
 import { RepsComponent } from './members/reps/reps.component';
 import { OddsComponent } from './odds/odds.component';
+import { ResolverService } from './resolver.service';
+import {OddsResolverService} from './odds.resolver.service';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -19,8 +21,8 @@ const routes: Routes = [
   { path: 'signup', component: SignupRComponent},
   { path: 'narrative', component: NarrativeComponent },
   { path: 'logout', component: LogoutComponent },
-  { path: 'theHouse', component: RepsComponent },
-  { path: 'theOdds', component: OddsComponent },
+  { path: 'theHouse', component: RepsComponent, resolve: {reps: ResolverService} },
+  { path: 'theOdds', component: OddsComponent, resolve: {oddsAll: OddsResolverService} }
 ];
 
 @NgModule({

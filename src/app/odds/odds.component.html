@@ -75,17 +75,23 @@
         </div>
       </div>
       <div id="allOdds" class="container col-lg-12 col-md-12 well">
-
         <div class="container col-lg-12 col-md-12">
-          <h3>All The Odds</h3> <span><button class="btn btn-primary " (click)="oddsPullAll()">Refresh</button></span>
+          <h3>Investigate:</h3> <span><button class="btn btn-primary " (click)="oddsPullAll()">Refresh</button></span>
           <button class="btn btn-info " (click)="oddsPullFeaturedTest()">Test Featured</button>
-          <!--<div id="questionName" class="lg-col-12 md-col-12" *ngFor="let odd of oddsAll">-->
-          <!--{{ odd.Name }}-->
-          <!--<div id="probName" *ngFor="let odd2 of odd.Contracts">-->
-          <!--{{ odd2.Name }}-->
-          <!--{{((odd2.BestSellYesCost*100).toFixed(1))}}%-->
-          <!--</div>-->
-          <!--</div>-->
+          <!--dropdown-->
+          <form>
+            <mat-form-field>
+              <!--<mat-select placeholder="Select an Odd" [(value)]="selected" >-->
+              <mat-select placeholder="Select an Odd">
+                <mat-option *ngFor="let item of oddsAll" value="{{ item.TickerSymbol }}" [class.selected]="item === selectedOdd" (click) = "onSelect(item)">{{ item.Name }}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </form>
+
+          <!--app-odds-grid-->
+          <div>
+            <app-odds-grid [odds]="selectedOdd"> load </app-odds-grid>
+          </div>
         </div>
       </div>
       <!--get one Odd-->
@@ -93,20 +99,9 @@
 
         <!--<button class="btn btn-danger" (click)="oddsPull(selected)">GET ONE ODD</button>-->
 
-        <!--dropdown-->
-        <form>
-          <mat-form-field>
-            <!--<mat-select placeholder="Select an Odd" [(value)]="selected" >-->
-            <mat-select placeholder="Select an Odd">
-              <mat-option *ngFor="let item of oddsAll" value="{{ item.TickerSymbol }}" [class.selected]="item === selectedOdd" (click) = "onSelect(item)">{{ item.Name }}</mat-option>
-            </mat-select>
-          </mat-form-field>
-        </form>
-        <span *ngIf="selected">Ticker Symbol: {{ selected }}</span>
-        <!--app-odds-grid-->
-        <div>
-          <app-odds-grid [odds]="selectedOdd"> load </app-odds-grid>
-        </div>
+
+        <!--<span *ngIf="selected">Ticker Symbol: {{ selected }}</span>-->
+
       </div>
 
     </div>

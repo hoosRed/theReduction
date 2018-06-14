@@ -4,6 +4,8 @@ import { DataService } from '../data.service';
 import { Odds } from './odds.model';
 import { Contract } from './contract.model';
 import {Member} from '../members/member/member.model';
+import {ActivatedRoute} from '@angular/router';
+import {OddsResolverService} from '../odds.resolver.service';
 
 
 @Component({
@@ -21,7 +23,10 @@ export class OddsComponent implements OnInit {
   featArray: Odds[];
 
 
-  constructor(private dataSharing: DataSharingService, private _dataService: DataService) {}
+  constructor(private dataSharing: DataSharingService,
+              private _dataService: DataService,
+              private route: ActivatedRoute,
+              private resolverService: OddsResolverService) {}
 
   onSelect(odds: Odds): void {
     this.selectedOdd = odds;
@@ -63,9 +68,15 @@ export class OddsComponent implements OnInit {
     console.log('You are in OddsPullAll');
   }
   ngOnInit() {
-    this._dataService.getAllOdds().subscribe(res => {
-      this.oddsAll = JSON.parse(res);
-    });
+    this.route.data
+      .subscribe( (data: {oddsAll: Odds[]}) => {
+        this.oddsAll = data.oddsAll;
+      })
+    // this._dataService.getAllOdds().subscribe(res => {
+    //   this.oddsAll = JSON.parse(res);
+    // });
+    console.log(this.oddsAll[0].TickerSymbol);
+    console.log(this.oddsAll[5].TickerSymbol);
     this.featArray = [];
     for (let count in this.ticker) {
       this.oddsPullFeatured(this.ticker[count], count);

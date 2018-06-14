@@ -24,7 +24,12 @@ router.post('/predictItFeat', function(req, res, next){
 });
 
 router.get('/predictItAll', function(req, res, next){
-  predictIt.all().then(data => this.res = data);
+  do {
+    predictIt.all().then(data => this.res = data);
+    var status = res.statusCode;
+  }while(!status);
+
+  // dont set status until you get the 200 code
   res.status(200).json({
     data: JSON.stringify(this.res),
     contract: JSON.stringify(this.res.Contracts)

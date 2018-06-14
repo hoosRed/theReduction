@@ -63,6 +63,8 @@ import { RepsComponent } from './members/reps/reps.component';
 import { MapComponent } from './map/map.component';
 import { OddsComponent } from './odds/odds.component';
 import { OddsGridComponent } from './odds/odds-grid/odds-grid.component';
+import { ResolverService } from './resolver.service';
+import { OddsResolverService } from './odds.resolver.service';
 
 // material design components actually being used must be in imports below
 @NgModule({
@@ -137,7 +139,7 @@ import { OddsGridComponent } from './odds/odds-grid/odds-grid.component';
     MatToolbarModule,
     MatTooltipModule
   ],
-  providers: [DataService, SignupService, DataSharingService],
+  providers: [DataService, SignupService, DataSharingService, ResolverService, OddsResolverService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

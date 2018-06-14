@@ -1,6 +1,14 @@
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 
 #oddsGrid{
-  border: solid darkblue 5px;
-  box-shadow: 5px 5px grey;
+  border: solid firebrick 5px;
+
+  margin-bottom: 25px;
+  padding: 10px;
+}
+body{
+  background-color: whitesmoke;
+}
+i{
+  height: 40px;
 }
