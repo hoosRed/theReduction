@@ -23,7 +23,6 @@ export class DataService {
     return this._http.get('/api/members')
       .map(result => this.result = result.json().data);
   }
-  // add a promise to the getReps method to implement with guard
 
   getReps() {
     return this._http.get('/api/reps')

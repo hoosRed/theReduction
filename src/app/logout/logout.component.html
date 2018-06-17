@@ -2,10 +2,10 @@
 <div id="userDetails" class="container">
   <div class="row">
     <div class="panel panel-default transparentBackground">
-      <div class="panel-heading">  <h4 >User Profile</h4></div>
+      <div class="panel-heading">  <h4>User Profile</h4></div>
       <div class="panel-body">
         <div class="col-md-4 col-xs-12 col-sm-6 col-lg-4">
-          <img alt="User Pic" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" id="profile-image1" class="img-circle img-responsive">
+          <img alt="User Pic" src="https://media.licdn.com/dms/image/C4E03AQEg6Vn6wj6Kvg/profile-displayphoto-shrink_200_200/0?e=1529265600&v=beta&t=efMMFQQQR9UiW2Hh_pPG48QUxXqzC3xipco9s1u0RWA" id="profile-image1" class="img-circle img-responsive" id="profile-image1" class="img-circle img-responsive">
         </div>
         <div class="col-md-8 col-xs-12 col-sm-6 col-lg-8" >
           <div class="container" >
@@ -15,22 +15,22 @@
           <hr>
           <ul class="container details" >
             <li><p><span class="glyphicon glyphicon-user one" style="width:50px;"></span>{{user.userName}}</p></li>
-            <li><p><span class="glyphicon glyphicon-envelope one" style="width:50px;"></span>{{user.email}}</p></li>
+            <li><p><span class="glyphicon glyphicon-envelope one" style="width:50px;"></span>tjr5av@virginia.edu</p></li>
           </ul>
           <hr>
-          <div class="col-sm-5 col-xs-6 tital " >Member since: </div>
+          <div class="col-sm-5 col-xs-6 tital " >Member since: April 2018</div>
           <div id="logout" class="container col-md-6">
             <button class="btn btn-danger " (click)="onLogout()">Logout</button>
             <span><button class="btn btn-primary">Contact Us</button></span>
           </div>
         </div>
       </div>
+      <p>
+        <mat-slide-toggle>Send me updates about The Reduction!</mat-slide-toggle>
+      </p>
+      <p>
+        <mat-slide-toggle>Subscribe to Podcast notifications</mat-slide-toggle>
+      </p>
     </div>
   </div>
-  <p>
-    <mat-slide-toggle>Send me updates about The Reduction!</mat-slide-toggle>
-  </p>
-  <p>
-    <mat-slide-toggle>This is another example Toggle that could drive action</mat-slide-toggle>
-  </p>
 </div>
