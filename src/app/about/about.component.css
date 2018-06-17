@@ -1,15 +1,15 @@
 body{
   background: #659999;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to bottom, #6C2A1E, #659999);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to bottom, #6C2A1E, #659999); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+  background-image: linear-gradient(to top, #c4c5c7 0%, #dcdddf 52%, #ebebeb 100%);
 }
 
 #aboutHeader{
   width: 100%;
   height: 500px;
-  background-image: url("https://images.unsplash.com/photo-1508046894814-45baae4132da?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a8907bd116f9353f7164a25d4da519d7&auto=format&fit=crop&w=1489&q=80");
+  background-image: url("https://images.unsplash.com/photo-1498753427761-548428edfa67?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b7fc0db4ecb6b80e2875d08395c5f094&auto=format&fit=crop&w=1489&q=80");
   background-size: cover;
+  background-position: 50% 10%;
+  background-repeat: no-repeat;
 }
 #aboutSection1{
   width: 100%;
